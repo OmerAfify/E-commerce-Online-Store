@@ -1,0 +1,57 @@
+
+<!-- breadcrumb start -->
+      <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="page-title">
+                        <h2>cart</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+
+    <!--section start-->
+    <section class="cart-section section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table cart-table table-responsive-xs">
+                
+                        <tbody *ngFor="let x of myCartList">
+                           <app-shopping-cart-item [item]="x"></app-shopping-cart-item>
+                        </tbody>
+     
+                    </table>
+
+
+                    
+                    <table class="table cart-table table-responsive-md">
+                        <tfoot>
+                            <tr>
+                                <td>total price :</td>
+                                <td>
+                                    <h2>{{calcTotal()}}</h2>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="row cart-buttons">
+                <div class="col-6"><a (click)="clearList()" onclick="event.preventDefault()" href="#" class="btn btn-solid">clear</a></div>
+                <div class="col-6"><a routerLink="/Checkout" class="btn btn-solid">check out</a></div>
+            </div>
+        </div>
+    </section>
+    <!--section end-->

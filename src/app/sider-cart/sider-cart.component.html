@@ -1,0 +1,55 @@
+
+ <button *ngIf="getSumQuantity()>=1" class="fixed-btn" onclick=" openCart()">
+ <h2 style="color: azure;">{{getSumQuantity()}}</h2>
+</button>
+<!-- Add to cart bar -->
+<div id="cart_side" class=" add_to_cart right">
+    <a href="javascript:void(0)" class="overlay" onclick="closeCart()"></a>
+    <div class="cart-inner">
+        <div class="cart_top">
+            <h3>my cart</h3>
+            <div class="close-cart">
+                <a href="javascript:void(0)" onclick="closeCart()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="cart_media">
+            <ul class="cart_product">
+                <li *ngFor="let x of mySidebarCart">
+                    <div class="media">
+                        <a href="#">
+                            <img alt="" class="mr-3" [src]="x.ImageName">
+                        </a>
+                        <div class="media-body">
+                            <a>
+                                
+                                <h5>{{x.ItemName}}</h5>
+                                <h6>Quantity: {{x.Quantity}}</h6>
+                            </a>
+                            <h4>
+                                <span>{{x.PurchasePrice}}</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="close-circle">
+                        <a (click)="removeItemFromCart( x.ItemId )">
+                            <i class="ti-trash" aria-hidden="true" ></i>
+                        </a>
+                    </div>
+                </li>
+        
+            </ul>
+            <ul class="cart_total">
+               
+                <li>
+                    <div class="buttons">
+                        <a routerLink="/ShoppingPage" onclick="closeCart()" class="btn btn-solid btn-xs view-cart">view cart</a>
+                        <a routerLink="/Checkout" onclick="closeCart()" class="btn btn-solid btn-xs checkout">checkout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Add to cart bar end-->

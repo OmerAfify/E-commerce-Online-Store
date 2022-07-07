@@ -1,0 +1,43 @@
+<tr>
+    <td>
+        <a href="#"><img [src]="item.ImageName" alt=""></a>
+    </td>
+    <td><a href="#">{{item.ItemName}}</a>
+        <div class="mobile-cart-content row">
+            <div class="col-xs-3">
+                <div class="qty-box">
+                    <div class="input-group">
+                        <input type="text" name="quantity" class="form-control input-number"
+                            value="1">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <h2 class="td-color">{{item.PurchasePrice}}</h2>
+            </div>
+            <div class="col-xs-3">
+                <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
+                </h2>
+            </div>
+        </div>
+    </td>
+    <td>
+        <h2>{{item.PurchasePrice}}</h2>
+    </td>
+    <td>
+        
+        <div class="qty-box">
+            <div class="input-group">
+               <input id="qt" type="number" name="quantity" class="form-control input-number"
+                  min="0" [value]="item.Quantity" (change)='onQtyChange( $event )' >
+                    
+            </div>
+        </div>
+       
+
+    </td>
+    <td><a (click)="removeItem()" class="icon"><i class="ti-close"></i></a></td>
+    <td>
+        <h2 class="td-color">{{item.TotalPrice}}</h2>
+    </td>
+</tr>

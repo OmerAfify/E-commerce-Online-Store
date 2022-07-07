@@ -1,0 +1,19 @@
+.fixed-btn{
+    position: fixed;
+    bottom: 50%;
+    right: 0%;
+    background-color: orangered;
+    line-height: 45px;
+    cursor: pointer;
+    height: 10vh;
+    width: 5vw;
+    border: 0px;
+    background-image: url("https://th.bing.com/th/id/R.819f0e93b6dfd792dd18ac901ce0a1a0?rik=1gu%2b61nc%2fjJqcw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_290616.png&ehk=EjRcUpr67W%2bgyaMF1LGQnHRca%2bhgo78zgso4nDNGF8A%3d&risl=&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+  
+  .fixed-btn:active{
+    box-shadow: 0  0;
+  }
